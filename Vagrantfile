@@ -28,10 +28,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.customize ["createhd", "--filename", name, "--size", 51200]
         vb.customize ["storageattach", :id, '--storagectl', 'IDE Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', name + '.vdi']
       end
-      #config.vm.provision :shell, :path => "lvm.sh"
-      #config.vm.provision :shell, :path => "install-puppet.sh"
-      #config.vm.provision :puppet
-      #config.vm.provision :shell, :path => "configure-kvm.sh"
+      config.vm.provision :shell, :path => "lvm.sh"
+      config.vm.provision :shell, :path => "puppet.sh"
+      config.vm.provision :puppet
+      config.vm.provision :shell, :path => "kvm.sh"
       config.vm.provision :shell, :path => "interfaces.sh", :args => [ip1(node), ip2(node)]
     end
   end
