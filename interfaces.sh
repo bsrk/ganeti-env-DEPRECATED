@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cat <<EOF > /etc/network/interfaces
 # The loopback network interface
 auto lo
