@@ -15,4 +15,6 @@ host {
 package {
   'ubuntu-virt-server':
     ensure => installed;
+  'drbd8-utils':
+    ensure => installed;
 }

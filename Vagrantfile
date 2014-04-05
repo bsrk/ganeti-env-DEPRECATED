@@ -32,6 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.provision :shell, :path => "puppet.sh"
       config.vm.provision :puppet
       config.vm.provision :shell, :path => "kvm.sh"
+      config.vm.provision :shell, :path => "drbd.sh"
       config.vm.provision :shell, :path => "interfaces.sh", :args => [ip1(node), ip2(node)]
     end
   end
