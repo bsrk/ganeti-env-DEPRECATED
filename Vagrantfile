@@ -23,6 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.box = "chef/ubuntu-13.10"
       config.vm.network :private_network, ip: ip1(node), adapter: 2, auto_config: false
       config.vm.network :private_network, ip: ip2(node), adapter: 3, auto_config: false
+      config.vm.synced_folder "../ganeti", "/root/ganeti"
       config.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", 2048]
         vb.customize ["createhd", "--filename", name, "--size", 51200]
@@ -34,6 +35,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.provision :shell, :path => "kvm.sh"
       config.vm.provision :shell, :path => "drbd.sh"
       config.vm.provision :shell, :path => "interfaces.sh", :args => [ip1(node), ip2(node)]
+      config.vm.provision :shell, :path => "packages.sh"
     end
   end
 end
