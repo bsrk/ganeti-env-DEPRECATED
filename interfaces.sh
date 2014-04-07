@@ -7,10 +7,10 @@ iface lo inet loopback
 
 # The primary network interface
 allow-hotplug eth1
-allow-hotplug br0
+allow-hotplug xen-br0
 
-auto br0
-iface br0 inet static
+auto xen-br0
+iface xen-br0 inet static
 EOF
 echo "   address $1" >> /etc/network/interfaces
 cat <<EOF >> /etc/network/interfaces
