@@ -85,4 +85,16 @@ package {
     ensure => installed;
   'libghc-text-dev':
     ensure => installed;
+  'debootstrap':
+    ensure => installed;
+  'dump':
+    ensure => installed;
+  'git':
+    ensure => installed;
+  'graphviz':
+    ensure => installed;
+  'pandoc':
+    ensure => installed;
+  'kpartx':
+    ensure => installed;
 }
