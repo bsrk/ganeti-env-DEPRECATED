@@ -24,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.network :private_network, ip: ip1(node), adapter: 2, auto_config: false
       config.vm.network :private_network, ip: ip2(node), adapter: 3, auto_config: false
       config.vm.synced_folder "../ganeti", "/root/ganeti"
+      config.vm.synced_folder "../instance-debootstrap", "/root/instance-debootstrap"
       config.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", 2048]
         vb.customize ["createhd", "--filename", name, "--size", 51200]
