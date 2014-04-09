@@ -1,4 +1,4 @@
-nodes = [:node1, :node2, :node3]
+nodes = [:node1, :node2, :node3, :node4]
 instances = [:instance1, :instance2, :instance3, :instance4, :instance5, :instance6]
 
 def node_number(node)
