@@ -1,3 +1,6 @@
+ganeti_folder = '../ganeti'
+debootstrap_folder = '../instance-debootstrap'
+
 nodes = [:node1, :node2, :node3, :node4]
 instances = [:instance1, :instance2, :instance3, :instance4, :instance5, :instance6]
 
@@ -28,8 +31,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.box = "chef/ubuntu-13.10"
       config.vm.network :private_network, ip: ip1(node), adapter: 2, auto_config: false
       config.vm.network :private_network, ip: ip2(node), adapter: 3, auto_config: false
-      config.vm.synced_folder "../ganeti", "/root/ganeti"
-      config.vm.synced_folder "../instance-debootstrap", "/root/instance-debootstrap"
+      config.vm.synced_folder ganeti_folder, "/root/ganeti"
+      config.vm.synced_folder debootstrap_folder, "/root/instance-debootstrap"
       config.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", 2048]
         vb.customize ["createhd", "--filename", name, "--size", 51200]
