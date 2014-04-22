@@ -1,7 +1,7 @@
-ganeti_folder = '../ganeti'
+ganeti_folder = '../dev/ganeti'
 debootstrap_folder = '../instance-debootstrap'
 
-nodes = [:node1, :node2, :node3, :node4]
+nodes = [:node1, :node2, :node3, :node4, :node5, :node6]
 instances = [:instance1, :instance2, :instance3, :instance4, :instance5, :instance6]
 
 def node_number(node)
